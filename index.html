@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-image: url('https://t.mwm.moe/pc');
+            background-size: cover;
+
+        }
+       div{
+            /* text-align: center;
+            line-height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: blue;
+            /* background-color: green; */
+            /* backdrop-filter: blur(1px); */
+        }
+        input{
+            margin-top: 100px;
+            width: 500px;
+            
+            height: 30px;
+            padding: 5px;
+            outline: none;
+            border: 1px solid #09f;
+            border-radius: 5px;
+        }
+        .search{
+            transform: translateX(-200px);
+            position: relative;
+        }
+        .icon{
+            position: absolute;
+            right: 10px;
+            top: 110px;
+        }
+    </style>
+</head>
+<body onclick="changeColor()">
+    <div >
+        <h1 >陆顺杰我爱你</h1>
+    <div class="search">
+        <input type="text" id="content" placeholder="请输入搜索内容">
+    <svg onclick="search()"   class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="657"><path d="M812.137931 406.068966C812.137931 181.803269 630.334658 0 406.068966 0 181.803273 0 0 181.803269 0 406.068966 0 630.334662 181.803273 812.137931 406.068966 812.137931 630.334658 812.137931 812.137931 630.334662 812.137931 406.068966ZM70.62069 406.068966C70.62069 220.805999 220.806003 70.62069 406.068966 70.62069 591.331928 70.62069 741.517241 220.805999 741.517241 406.068966 741.517241 591.331932 591.331928 741.517241 406.068966 741.517241 220.806003 741.517241 70.62069 591.331932 70.62069 406.068966ZM963.201748 1013.13812C976.991303 1026.927667 999.348577 1026.927667 1013.138114 1013.13812 1026.927669 999.348572 1026.927669 976.991299 1013.138114 963.201751L713.519916 663.583539C699.730361 649.793993 677.373087 649.793993 663.583532 663.583539 649.793995 677.373087 649.793995 699.730361 663.583532 713.519909L963.201748 1013.13812Z" fill="#389BFF" p-id="658"></path></svg>    
+
+    </div>
+    </div>
+    <script>
+        let h1 = document.querySelector("h1");
+        function changeColor(){
+            h1.style.color = '#fff'
+            var randomNumber = Math.random();
+            document.body.style.backgroundImage = `url('https://t.mwm.moe/pc?${randomNumber}')`
+        }
+        function search(){
+            location.href = 'https://cn.bing.com/search?pglt=299&q=' + document.querySelector("#content").value
+        }
+    </script>
+</body>
+</html>
