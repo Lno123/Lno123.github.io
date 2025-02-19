@@ -47,7 +47,7 @@
         }
     </style>
 </head>
-<body onclick="changeColor()">
+<body >
     <div >
         <h1 >陆顺杰我爱你</h1>
     <div class="search">
@@ -58,11 +58,24 @@
     </div>
     <script>
         let h1 = document.querySelector("h1");
+        document.body.addEventListener("click",e=>{
+            console.log(e);
+            
+            if(e.target.id == 'content') return 
+            changeColor()
+        })
         function changeColor(){
             h1.style.color = '#fff'
             var randomNumber = Math.random();
             document.body.style.backgroundImage = `url('https://t.mwm.moe/pc?${randomNumber}')`
         }
+        document.querySelector("#content").addEventListener("keydown",(e)=>{
+            console.log(e);
+            if(e.code == 'Enter'){
+                search()
+            }
+            
+        })
         function search(){
             location.href = 'https://cn.bing.com/search?pglt=299&q=' + document.querySelector("#content").value
         }
